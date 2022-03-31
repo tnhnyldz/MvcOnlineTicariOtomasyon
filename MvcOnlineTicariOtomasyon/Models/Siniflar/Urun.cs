@@ -28,6 +28,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [StringLength(250)]
         public string UrunGorsel { get; set; }
         public Kategori Kategori { get; set; }
-        public SatisHaraket SatisHaraket { get; set; }
+        public ICollection<SatisHaraket> SatisHarakets { get; set; }
     }
 }
