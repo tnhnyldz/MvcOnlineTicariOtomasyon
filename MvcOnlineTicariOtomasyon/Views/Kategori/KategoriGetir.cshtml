@@ -10,12 +10,30 @@
 <br />
 @using (Html.BeginForm("KategoriGuncelle", "Kategori", FormMethod.Post))
 {
-    <div class="form-group">
-        @Html.LabelFor(x=>x.KategoriAd)
-        @Html.TextBoxFor(x=>x.KategoriAd, new { @class = "form-control" })
-        @Html.HiddenFor(x=>x.KategoriID)
+    <div class="container-fluid col-6">
+        <div class="form-group">
+            @Html.LabelFor(x => x.KategoriAd, new { @class = "form-control label" })
+            @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
+            @Html.HiddenFor(x => x.KategoriID)
+        </div>
+        <br />
+        <button class="btn btn-success">Güncelle</button>
     </div>
-    <br />
-    <button class="btn btn-warning">Güncelle</button>
 }
 
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>

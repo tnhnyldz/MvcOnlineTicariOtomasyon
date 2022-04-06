@@ -4,32 +4,53 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-
-<h2>Burası Kategori</h2>
-
-<table class="table table-bordered" style="margin-top: 20px">
-    <tr>
-        <th>ID</th>
-        <th>Kategori Adı</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-    </tr>
-    @foreach (var k in Model)
-    {
+<br />
+<div class="container-fluid col-6">
+    <h2 style="color:white">Kategoriler</h2>
+    <table class="table table-bordered table-hover table-dark" style="margin-top: 20px">
         <tr>
-            <td>
-                @k.KategoriID
-            </td>
-             <td>
-                @k.KategoriAd
-            </td>
-            <td>
-               <a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a>
-            </td>
-            <td>
-                <a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a>
-            </td>
+            <th>ID</th>
+            <th>Kategori Adı</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
         </tr>
-    }
-</table>
-<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>
+                    @k.KategoriID
+                </td>
+                <td>
+                    @k.KategoriAd
+                </td>
+                <td>
+                    <a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a>
+                </td>
+                <td>
+                    <a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
+</div>
+
+
+
+
+    <style>
+        body {
+            background-color: #212529;
+        }
+
+        .textbox {
+            color: white;
+            background-color: #212529;
+        }
+
+        .label {
+            color: white;
+            background-color: #212529;
+            border: #212529;
+        }
+    </style>

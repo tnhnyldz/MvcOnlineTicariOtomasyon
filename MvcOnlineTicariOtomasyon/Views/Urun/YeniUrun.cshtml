@@ -1,0 +1,52 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<h2>Yeni Ürun Sayfası</h2>
+<br />
+<div class="container-fluid col-8">
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.UrunAd, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Marka, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Marka, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.Stok, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Stok, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.AlisFiyat, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.SatisFiyat, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Kategori, new { @class = "form-control label" })
+        @Html.DropDownListFor(x=>x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1, new { @class="form-control" })
+        @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+        <br />
+        @Html.LabelFor(x => x.UrunGorsel, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Durum, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Ekle</button> 
+    </form>
+</div>
+<style>
+    body {
+        background-color: #212529;
+    }
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>
