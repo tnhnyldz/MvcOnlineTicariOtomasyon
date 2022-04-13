@@ -1,0 +1,48 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Personel
+
+@{
+    ViewBag.Title = "PersonelEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid col-8">
+    <br />
+    <h2>Yeni Personel Sayfası</h2>
+    <br />
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.PersonelAd, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelSoyad, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.PersonelGorsel, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control " })
+        <br />
+
+
+        @Html.LabelFor(x => x.Departman, new { @class = "form-control label" })
+        @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+        <br />
+
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>
