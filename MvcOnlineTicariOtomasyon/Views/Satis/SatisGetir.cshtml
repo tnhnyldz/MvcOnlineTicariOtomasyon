@@ -1,0 +1,64 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.SatisHaraket
+
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("SatisGuncelle", "Satis", FormMethod.Post))
+{
+    <br />
+    <div class="container-fluid col-8">
+
+        <h2 class="label">Satış Güncelleme Sayfası</h2>
+
+        <form class="form-group" method="post">
+            @Html.HiddenFor(x => x.SatisID)
+            @Html.LabelFor(x => x.Urun, new { @class = "form-control label" })
+            @Html.DropDownListFor(x => x.Urunid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+            <br />
+            @Html.Label("Cari", new { @class = "form-control label" })
+            @Html.DropDownListFor(x => x.Cariid, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Personel, new { @class = "form-control label" })
+            @Html.DropDownListFor(x => x.Personelid, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Adet, new { @class = "form-control label" })
+            @Html.TextBoxFor(x => x.Adet, new { @class = "form-control " })
+            <br />
+            @Html.LabelFor(x => x.Fiyat, new { @class = "form-control label" })
+            @Html.TextBoxFor(x => x.Fiyat, new { @class = "form-control" })
+            <br />
+
+            <br />
+            @Html.LabelFor(x => x.ToplamTutar, new { @class = "form-control label" })
+            @Html.TextBoxFor(x => x.ToplamTutar, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.Tarih, new { @class = "form-control label" })
+            @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+            <br />
+            <button class="btn btn-success">Güncelle</button>
+        </form>
+    </div>
+}
+
+
+
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>
