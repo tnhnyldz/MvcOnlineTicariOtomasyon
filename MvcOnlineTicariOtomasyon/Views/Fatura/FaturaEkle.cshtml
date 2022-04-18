@@ -1,0 +1,53 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Faturalar
+
+@{
+    ViewBag.Title = "FaturaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container-fluid col-8">
+    <br />
+    <h2 class="label">Yeni Fatura Ekleme Sayfası</h2>
+    <br />
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.FaturaSeriNo, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.FaturaSıraNo, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.Tarih, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.Saat, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Saat, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.VergiDairesi, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.TeslimEden, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.TeslimAlan, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control " })
+
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>

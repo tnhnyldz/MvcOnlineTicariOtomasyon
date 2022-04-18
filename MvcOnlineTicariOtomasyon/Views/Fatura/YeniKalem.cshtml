@@ -1,0 +1,46 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.FaturaKalem
+
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="container-fluid col-8">
+    <br />
+    <h2 class="label">Yeni Kalem Ekleme Sayfası</h2>
+    <br />
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.Aciklama, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Miktar, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.BirimFiyat, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.Tutar, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control " })
+        <br />
+        @Html.LabelFor(x => x.faturaid, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.faturaid, new { @class = "form-control " })
+        <br />
+        <button class="btn btn-primary">Ekle</button>
+    </form>
+</div>
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>

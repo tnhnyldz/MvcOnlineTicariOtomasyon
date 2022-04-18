@@ -17,18 +17,10 @@
         @foreach (var k in Model)
         {
             <tr>
-                <td>
-                    @k.KategoriID
-                </td>
-                <td>
-                    @k.KategoriAd
-                </td>
-                <td>
-                    <a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a>
-                </td>
-                <td>
-                    <a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a>
-                </td>
+                <td>@k.KategoriID</td>
+                <td>@k.KategoriAd</td>
+                <td><a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a></td>
             </tr>
         }
     </table>
@@ -38,19 +30,19 @@
 
 
 
-    <style>
-        body {
-            background-color: #212529;
-        }
+<style>
+    body {
+        background-color: #212529;
+    }
 
-        .textbox {
-            color: white;
-            background-color: #212529;
-        }
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
 
-        .label {
-            color: white;
-            background-color: #212529;
-            border: #212529;
-        }
-    </style>
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>
