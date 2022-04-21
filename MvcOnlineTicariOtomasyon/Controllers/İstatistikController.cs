@@ -50,7 +50,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var deger12 = c.Uruns.GroupBy(x => x.Marka).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault();
             ViewBag.d12 = deger12;
 
-            var deger13 = c.Uruns.Where(u => u.UrunID == (c.SatisHarakets.GroupBy(x => x.Urunid).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault())).Select(k=>k.UrunAd).FirstOrDefault().ToUpper();
+            var deger13 = c.Uruns.Where(u => u.UrunID == (c.SatisHarakets.GroupBy(x => x.Urunid).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault())).Select(k => k.UrunAd).FirstOrDefault().ToUpper();
             ViewBag.d13 = deger13;
 
             var deger14 = c.SatisHarakets.Sum(x => x.ToplamTutar).ToString();
@@ -76,5 +76,37 @@ namespace MvcOnlineTicariOtomasyon.Controllers
                         };
             return View(sorgu.ToList());
         }
+        public PartialViewResult Partial1()
+        {
+            var sorgu2 = from x in c.Personels
+                         group x by x.Departman.DepartmanAd into g
+                         select new SinifGrup2
+                         {
+                             Departman = g.Key,
+                             Sayi = g.Count()
+                         };
+            return PartialView(sorgu2.ToList());
+        }
+        public PartialViewResult Partial2()
+        {
+            var sorgu = c.Carilers.ToList();
+            return PartialView(sorgu);
+        }
+        public PartialViewResult Partial3()
+        {
+            var sorgu = c.Uruns.ToList();
+            return PartialView(sorgu);
+        }
+        public PartialViewResult Partial4()
+        {
+            var sorgu = from x in c.Uruns
+                        group x by x.Marka into g
+                        select new SinifGrup3
+                        {
+                            marka = g.Key,
+                            sayi = g.Count()
+                        };
+            return PartialView(sorgu.ToList());
+        } 
     }
 }
