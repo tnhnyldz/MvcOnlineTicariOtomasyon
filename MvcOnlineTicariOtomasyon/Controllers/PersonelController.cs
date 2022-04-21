@@ -48,17 +48,22 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
 
             var prs = c.Personels.Find(id);
-            return View("PersonelGetir",prs);
+            return View("PersonelGetir", prs);
         }
         public ActionResult PersonelGuncelle(Personel p)
         {
             var prsn = c.Personels.Find(p.PersonelID);
             prsn.PersonelAd = p.PersonelAd;
-            prsn.PersonelSoyad= p.PersonelSoyad;
+            prsn.PersonelSoyad = p.PersonelSoyad;
             prsn.PersonelGorsel = p.PersonelGorsel;
             prsn.Departmanid = p.Departmanid;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult PersonelListe()
+        {
+            var sorgu = c.Personels.ToList();
+            return View(sorgu);
         }
     }
 }
