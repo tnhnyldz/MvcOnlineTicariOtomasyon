@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login Form</title>
+    <title>Mvc5 Online Ticari Otomasyon</title>
     <!-- custom-theme -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,18 +37,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <!-- body starts -->
 <body>
-    <br /> <br /><br />
+
     <!-- section -->
     <section class="register">
         <div class="header">
             <div class="logo">
-                <a href="#">Project</a>
+                <a href="#">GİRİŞ Formu</a>
             </div>
             <div class="social">
-                <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                <li><a href="https://www.youtube.com/channel/UCHwlqlenLru0C_F_gf892FQ" target="_blank"><span class="fa fa-youtube"></span></a></li>
+                <li><a href="https://github.com/ayguncaliskan"><span class="fa fa-github" target="_blank"></span></a></li>
+                <li><a href="https://www.linkedin.com/in/ayg%C3%BCn-%C3%A7al%C4%B1%C5%9Fkan-a0083616a/" target="_blank"><span class="fa fa-linkedin"></span></a></li>
+                <li><a href="https://play.google.com/store/apps/developer?id=Faydapps&hl=en_AU&gl=US" target="_blank"><span class="fa fa-google"></span></a></li>
             </div>
             <div class="clear"></div>
         </div>
@@ -56,61 +56,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="register-full">
             <div class="register-left">
                 <div class="register">
-
-                    <h1>Asp.Net MVC5 </h1>
+                    <h1>Asp.net Mvc5 ile</h1>
                     <h2>Dinamik Web Projesi Geliştirme</h2>
                     <p>
-                        Admin, Personel kişisel sayfası ve cari kişisel sayfası olmak üzere 3 tane temel yapısı bulunmaktadır. Giriş yapmak istediğiniz yeri yan taraftan seçiniz
+                        Admin, Personel kişisel sayfası ve cari kişisel sayfası olmak üzere 3 tane temel yapımız bulunmaktadır.
+                        Giriş yapmak istediğiniz yetki durumunuza göre ilgili menüyü seçin.
                     </p>
                     <div class="content3">
                         <ul>
-                            <li><a class="" href="#">Firmalar</a></li>
-                            <li><a class="read" href="#">Ürünlerimiz</a></li>
+                            <li><a class="" href="#">Firmalarımız</a></li>
+                            <li><a class="read" href="#"> Ürünlerimiz</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="register-right">
                 <div class="register-in">
-                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog2">Kayıt Ol »</a>
+                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog2">Kayıt ol »</a>
                 </div>
                 <div class="register-in middle">
-                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">Cari Girişi »</a>
+                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">Cari girişi »</a>
                 </div>
                 <div class="register-in">
-                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog1">Personel Girişi  »</a>
+                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog1">Personel girişi»</a>
                 </div>
                 <div class="clear"> </div>
             </div>
             <div class="clear"> </div>
         </div>
         <!-- copyright -->
-        @*<p class="agile-copyright">© 2018 Project. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">W3layouts</a></p>*@
         <!-- //copyright -->
     </section>
     <!-- //section -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- login form popup-->
     <div class="pop-up">
+        @*@Html.Action("Partial2")*@
         <div id="small-dialog" class="mfp-hide book-form">
 
             <div class="login-form login-form-left">
@@ -119,14 +99,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="fa fa-lock"></span>
                     <div class="clear"></div>
                     <div class="login-agileits-top">
-                        <form action="#" method="post">
+                        @using (Html.BeginForm("CariLogin1", "Login", FormMethod.Post))
+                        {
+
                             <input type="text" class="name" name="CariMail" Placeholder="Mail Adresiniz" required="" />
-                            <input type="password" class="password" name="Sifre" Placeholder="Şifreniz" required="" />
-                            <input type="submit" value="Giriş Yap">
-                        </form>
+                            <input type="password" class="password" name="CariSifre" Placeholder="Şifreniz" required="" />
+                            <input type="submit" value="Giris Yap">
+
+                        }
                     </div>
                     <div class="login-agileits-bottom">
-                        <h6><a href="#">Şifremi Unuttum ?</a></h6>
+                        <h6><a href="#">Şifremi Unuttum?</a></h6>
                     </div>
                 </div>
             </div>
@@ -134,28 +117,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //login form popup-->
-
-
-
-
-
-
-
-
     <!-- subscribe form popup-->
     <div class="pop-up">
         <div id="small-dialog1" class="mfp-hide book-form">
 
             <div class="login-form login-form-left">
                 <div class="agile-row">
-                    <h3>Personel Giriş Formu</h3> 
+                    <h3>Personel Formu Girişi</h3>
+
                     <div class="clear"></div>
                     <div class="login-agileits-top">
-                        <form action="#" method="post">
-                            <input type="text" class="name" name="KullaniciAd" Placeholder="Kulanıcı Adı" required="" />
-                            <input type="password" class="email" name="Sifre" Placeholder="Şifre" required="" />
+                        @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
+                        {
+                            <input type="text" class="name" name="KulllaniciAd" Placeholder="Kullancı Adı" required="" />
+                            <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
                             <input type="submit" value="Giriş Yap">
-                        </form>
+                        }
                     </div>
                 </div>
             </div>
@@ -163,23 +140,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //subscribe form popup-->
-
-
-
-
-
-
-
-
-
-
-
     <!-- register form popup-->
     <div class="pop-up">
         <div id="small-dialog2" class="mfp-hide book-form">
 
-            @Html.Action("Partial1","Login")
-
+            @*<div class="login-form login-form-left">
+                    <div class="agile-row">
+                        <h3>Yeni Cari Kaydı</h3>
+                        <div class="login-agileits-top">
+                            <form action="#" method="post">
+                                <input type="text" class="name" name="CariAd" Placeholder="Adınız" required="" />
+                                <input type="text" class="name" name="CariSoyad" Placeholder="Soyadınız" required="" />
+                                <input type="email" class="name" name="CariMail" Placeholder="Mail" required="" />
+                                <input type="text" class="name" name="CariSehir" Placeholder="Sehir" required="" />
+                                <input type="password" class="password" name="CariSifre" Placeholder="Sifreniz" required="" />
+                                <div class="login-check">
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Kuralları okudum  &amp; Kabul Ediyorum</label>
+                                </div>
+                                <input type="submit" value="Kaydol">
+                            </form>
+                        </div>
+                    </div>
+                </div>*@
+            @Html.Action("Partial1", "Login")
         </div>
     </div>
     <!-- //register form popup-->
@@ -201,7 +184,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 removalDelay: 300,
                 mainClass: 'my-mfp-zoom-in'
             });
-
         });
     </script>
     <!--//popup-js-->
