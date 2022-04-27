@@ -10,25 +10,29 @@
     <br />
     <h2>Yeni Personel Sayfası</h2>
     <br />
-    <form class="form-group" method="post">
-        @Html.LabelFor(x => x.PersonelAd, new { @class = "form-control label" })
-        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
-        <br />
-        @Html.LabelFor(x => x.PersonelSoyad, new { @class = "form-control label" })
-        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control " })
-        <br />
-        @Html.LabelFor(x => x.PersonelGorsel, new { @class = "form-control label" })
-        @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control " })
-        <br />
+    @using (Html.BeginForm("PersonelEkle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <form class="form-group" method="post">
+            @Html.LabelFor(x => x.PersonelAd, new { @class = "form-control label" })
+            @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(x => x.PersonelSoyad, new { @class = "form-control label" })
+            @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control " })
+            <br />
+            @Html.LabelFor(x => x.PersonelGorsel, new { @class = "form-control label" })
+            @*@Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control " })*@
+            <input type="file" name="PersonelGorsel" />
+            <br />
 
 
-        @Html.LabelFor(x => x.Departman, new { @class = "form-control label" })
-        @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
-        @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
-        <br />
+            @Html.LabelFor(x => x.Departman, new { @class = "form-control label" })
+            @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+            @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
+            <br />
 
-        <button class="btn btn-primary">Ekle</button>
-    </form>
+            <button class="btn btn-primary">Ekle</button>
+        </form>
+    }
 </div>
 <style>
     body {
