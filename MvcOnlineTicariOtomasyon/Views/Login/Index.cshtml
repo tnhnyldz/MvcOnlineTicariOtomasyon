@@ -129,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="login-agileits-top">
                         @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
                         {
-                            <input type="text" class="name" name="KulllaniciAd" Placeholder="Kullancı Adı" required="" />
+                            <input type="text" class="name" name="KullaniciAd" Placeholder="Kullanıcı Adı" required="" />
                             <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
                             <input type="submit" value="Giriş Yap">
                         }
@@ -143,25 +143,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- register form popup-->
     <div class="pop-up">
         <div id="small-dialog2" class="mfp-hide book-form">
-
-            @*<div class="login-form login-form-left">
-                    <div class="agile-row">
-                        <h3>Yeni Cari Kaydı</h3>
-                        <div class="login-agileits-top">
-                            <form action="#" method="post">
-                                <input type="text" class="name" name="CariAd" Placeholder="Adınız" required="" />
-                                <input type="text" class="name" name="CariSoyad" Placeholder="Soyadınız" required="" />
-                                <input type="email" class="name" name="CariMail" Placeholder="Mail" required="" />
-                                <input type="text" class="name" name="CariSehir" Placeholder="Sehir" required="" />
-                                <input type="password" class="password" name="CariSifre" Placeholder="Sifreniz" required="" />
-                                <div class="login-check">
-                                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Kuralları okudum  &amp; Kabul Ediyorum</label>
-                                </div>
-                                <input type="submit" value="Kaydol">
-                            </form>
-                        </div>
-                    </div>
-                </div>*@
             @Html.Action("Partial1", "Login")
         </div>
     </div>
