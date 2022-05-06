@@ -1,0 +1,43 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+<div class="container-fluid col-10">
+    <br />
+    <h2 style="color: white">Cariler</h2>
+    <br />
+    <table class="table table-bordered table-hover table-dark table-striped">
+        <tr>
+            <th>Açıklama</th>
+            <th>Tarih</th>
+
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Aciklama</td>
+                <td>@x.TarihZaman</td>
+            </tr>
+        }
+    </table>
+    <a href="/Cari/YeniCari/" class="btn btn-primary">Yeni Cari Ekle</a>
+</div>
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>

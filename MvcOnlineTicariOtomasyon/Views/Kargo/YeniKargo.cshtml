@@ -1,0 +1,48 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.KargoDetay
+
+@{
+    ViewBag.Title = "YeniKargo";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>DepartmanEkle</h2>
+
+<div class="container-fluid col-8">
+    <br />
+    <h2 class="label">Yeni Kargo Bilgisi Sayfası</h2>
+    <br />
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.TakipKodu, new { @class = "form-control label" })
+        <input type="text" value="@ViewBag.takipkod" class="form-control" readonly name="TakipKodu" />
+        <br />
+        @Html.LabelFor(x => x.Personel, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Alici, new { @class = "form-control label" })
+        @Html.TextBoxFor(x => x.Alici, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Tarih, new { @class = "form-control label" })
+        <input class="form-control" type="date" name="Tarih" />
+        <br />
+        @Html.LabelFor(x => x.Aciklama, new { @class = "form-control label" })
+        @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </form>
+</div>
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>

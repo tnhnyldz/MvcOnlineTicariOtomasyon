@@ -1,0 +1,68 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<KargoDetay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<div class="container-fluid col-8">
+    <h2 style="color:white">Departmanlar</h2>
+
+    <br />
+    @using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+    {
+        <p class="textbox">
+            Kargo Takip No : @Html.TextBox("P")
+            <input type="submit" class="btn btn-outline-light" value="Ara" />
+        </p>
+    }
+    <table class="table table-bordered table-hover table-dark table-striped" style="margin-top: 20px">
+        <tr>
+            <th>Personel </th>
+            <th>Alıcı</th>
+            <th>Takip Kodu</th>
+            <th>Tarih</th>
+            <th>Detaylar</th>
+        </tr>
+        @foreach (var k in Model)
+        {
+            <tr>
+                <td>
+                    @k.Personel
+                </td>
+                <td>
+                    @k.Alici
+                </td>
+                <td>
+                    @k.TakipKodu
+                </td>
+                <td>
+                    @k.Tarih
+                </td>
+                <td>
+                    <a href="/Kargo/KargoTakip/@k.TakipKodu" class="btn btn-outline-light">Detaylar</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="/Kargo/YeniKargo" class="btn btn-primary">Yeni Kargo Girişi</a>
+</div>
+<style>
+    body {
+        background-color: #212529;
+    }
+
+    .textbox {
+        color: white;
+        background-color: #212529;
+    }
+
+    .label {
+        color: white;
+        background-color: #212529;
+        border: #212529;
+    }
+</style>
+
+
