@@ -28,5 +28,67 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.SatisHarakets.Where(x => x.Cariid == id).ToList();
             return View(degerler);
         }
+        public ActionResult GelenMesajlar()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = c.mesajlars.Where(x=>x.Alici==mail).OrderByDescending(x=>x.MesajID).ToList();
+            var gelensayisi = c.mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View(mesajlar);
+        }
+        public ActionResult GidenMesajlar()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = c.mesajlars.Where(x => x.Gonderici == mail).OrderByDescending(z => z.MesajID).ToList();
+            var gelensayisi = c.mesajlars.Count(x => x.Alici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View(mesajlar);
+        }
+        public ActionResult MesajDetay(int id)
+        {
+            var degerler = c.mesajlars.Where(x => x.MesajID == id).ToList();
+            var mail = (string)Session["CariMail"];
+            var gelensayisi = c.mesajlars.Count(x=> x.Gonderici==mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View(degerler);  
+        }
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
+
+            var mail = (string)Session["CariMail"];
+            var gelensayisi = c.mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniMesaj(mesajlar m)
+        {
+            var mail = (string)Session["CariMail"];
+            m.Gonderici = mail;
+            m.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            c.mesajlars.Add(m);
+            c.SaveChanges();
+            return View();
+        }
+
+        //[HttpGet]
+        //public ActionResult YeniMesaj()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult YeniMesaj()
+        //{
+        //    return View();
+        //}
     }
 }
