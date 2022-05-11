@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -19,6 +20,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.m = mail;
             return View(degerler);
         }
+        [Authorize]
         public ActionResult Siparislerim()
         {
             var mail = (string)Session["CariMail"];
@@ -28,6 +30,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             var degerler = c.SatisHarakets.Where(x => x.Cariid == id).ToList();
             return View(degerler);
         }
+        [Authorize]
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"];
@@ -38,6 +41,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
+        [Authorize]
         public ActionResult GidenMesajlar()
         {
             var mail = (string)Session["CariMail"];
@@ -48,6 +52,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
+        [Authorize]
         public ActionResult MesajDetay(int id)
         {
             var degerler = c.mesajlars.Where(x => x.MesajID == id).ToList();
@@ -58,6 +63,7 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             ViewBag.d2 = gidensayisi;
             return View(degerler);  
         }
+        [Authorize]
         [HttpGet]
         public ActionResult YeniMesaj()
         {
@@ -79,16 +85,23 @@ namespace MvcOnlineTicariOtomasyon.Controllers
             c.SaveChanges();
             return View();
         }
+        public ActionResult KargoTakip(string p)
+        {
+            var k = from x in c.KargoDetays select x;
+            k = k.Where(y => y.TakipKodu.Contains(p));
+            return View(k.ToList());
+        }
+        public ActionResult CariKargoTakip(string id)
+        {
+            var degerler = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            return View(degerler);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index","Login");
+        }
 
-        //[HttpGet]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
-        //[HttpPost]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
-        //}
     }
 }
