@@ -2,7 +2,7 @@
 # MVC Online Ticari Otomasyon 
 
 This project was developed in 2 months.
-Inspired by https://www.udemy.com/course/mvconlineticariotomasyon/?utm_source=adwords-learn&utm_medium=udemyads&utm_campaign=INTL-AW-PROS-ALL-TR-DSA-TR-TUR_._ci__._sl_TUR_._vi_ALL_._sd_All_._la_TR_._&utm_content=deal4584&utm_term=_._ag_103679269913_._ad_440356769031_._de_c_._dm__._pl__._ti_dsa-891452044249_._li_9056787_._pd__._&gclid=EAIaIQobChMI1P-98LGW-AIVjNnVCh27iAB2EAAYASAAEgLkn_D_BwE
+Inspired by Murat Yücedağ MVC Online Ticari Otomasyon Course
 
 
 
